@@ -7,6 +7,7 @@
     <th>Cellphone</th>
     <th>Residence</th>
     <th>Rails</th>
+    <th>Technologies</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,6 +20,10 @@
     <td><%= recruit.cellphone %></td>
     <td><%= recruit.residence %></td>
     <td><%= recruit.rails %></td>
+    <td><% recruit.languages.each do |language| %>
+            <%= "#{language.name}, " %>
+        <% end %>
+    </td>
     <td><%= link_to 'Show', recruit %></td>
     <td><%= link_to 'Edit', edit_recruit_path(recruit) %></td>
     <td><%= link_to 'Destroy', recruit, confirm: 'Are you sure?', method: :delete %></td>

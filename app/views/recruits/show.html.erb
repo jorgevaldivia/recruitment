@@ -25,6 +25,15 @@
   <%= @recruit.rails %>
 </p>
 
+<p>
+  <b>Technologies</b>
+  <ul>
+    <% @recruit.languages.each do |language| %>
+      <li><%= language.name %></li>
+    <% end %>
+  </ul>
+</p>
+
 
 <%= link_to 'Edit', edit_recruit_path(@recruit) %> |
-<%= link_to 'Back', recruits_path %>
+<%= link_to 'Finish', new_recruit_path %>

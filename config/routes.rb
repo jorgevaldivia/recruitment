@@ -1,4 +1,6 @@
 Recruitment::Application.routes.draw do
+
+  root :to => "recruits#new"
   resources :languages
 
   resources :recruits

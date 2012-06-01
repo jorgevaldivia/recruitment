@@ -28,8 +28,15 @@
     <%= f.text_field :residence %>
   </div>
   <div class="field">
-    <%= f.label :rails %><br />
-    <%= f.check_box :rails %>
+    <%= f.check_box :rails %> <%= f.label :rails %>
+  </div>
+  <div class="field">
+    <%= hidden_field_tag "recruit[language_ids[]", nil %>
+    <% Language.all.each do |lang| -%>
+      <%= check_box_tag "recruit[language_ids[]", lang.id, 
+        @recruit.language_ids.include?(lang.id), id: dom_id(lang) %>
+      <%= label_tag dom_id(lang), lang.name %>
+    <% end -%>
   </div>
   <div class="actions">
     <%= f.submit %>
