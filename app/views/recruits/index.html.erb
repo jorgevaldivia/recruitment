@@ -1,0 +1,31 @@
+<h1>Listing recruits</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Cellphone</th>
+    <th>Residence</th>
+    <th>Rails</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @recruits.each do |recruit| %>
+  <tr>
+    <td><%= recruit.name %></td>
+    <td><%= recruit.email %></td>
+    <td><%= recruit.cellphone %></td>
+    <td><%= recruit.residence %></td>
+    <td><%= recruit.rails %></td>
+    <td><%= link_to 'Show', recruit %></td>
+    <td><%= link_to 'Edit', edit_recruit_path(recruit) %></td>
+    <td><%= link_to 'Destroy', recruit, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Recruit', new_recruit_path %>
