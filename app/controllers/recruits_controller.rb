@@ -1,6 +1,6 @@
 class RecruitsController < ApplicationController
 
-  before_filter :verify_is_admin, :only => [ :index , :edit, :update, :destroy]
+  before_filter :verify_is_admin, :only => [ :index , :update, :destroy]
 
   # GET /recruits
   # GET /recruits.json

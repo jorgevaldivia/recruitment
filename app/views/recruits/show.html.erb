@@ -36,4 +36,9 @@
 
 
 <%= link_to 'Edit', edit_recruit_path(@recruit) %> |
-<%= link_to 'Finish', new_recruit_path %>
+
+<% if user_signed_in? %>
+  <%= link_to 'Back', recruits_path %>
+<% else %>
+  <%= link_to 'Finish', new_recruit_path %>
+<% end %>

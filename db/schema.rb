@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20120601202554) do
     t.boolean  "promising"
     t.boolean  "rejected"
     t.string   "comments"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
