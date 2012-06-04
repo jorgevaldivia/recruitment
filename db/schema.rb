@@ -11,6 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+
 ActiveRecord::Schema.define(:version => 20120601202554) do
 
   create_table "knowledges", :force => true do |t|
@@ -38,7 +39,6 @@ ActiveRecord::Schema.define(:version => 20120601202554) do
     t.boolean  "promising"
     t.boolean  "rejected"
     t.string   "comments"
-  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

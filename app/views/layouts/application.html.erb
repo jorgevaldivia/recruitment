@@ -7,8 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div id="container">
+		<div id="user_nav">
+			<% if user_signed_in? %>
+				Signed in as <%= current_user.email %>. Not you?
+				<%= link_to "Sign_out", destroy_user_session_path, data: { method: "delete" } %>
+			<% end %>
+		</div>
 
-<%= yield %>
-
+		<%= yield %>
+	</div>
 </body>
 </html>

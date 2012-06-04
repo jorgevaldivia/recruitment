@@ -1,4 +1,7 @@
 class RecruitsController < ApplicationController
+
+  before_filter :verify_is_admin, :only => [ :index , :edit, :update, :destroy]
+
   # GET /recruits
   # GET /recruits.json
   def index
@@ -79,5 +82,9 @@ class RecruitsController < ApplicationController
       format.html { redirect_to recruits_url }
       format.json { head :no_content }
     end
+  end
+
+  def verify_is_admin
+    (current_user.nil?) ? redirect_to(new_user_session_path) : (redirect_to(recruits_path) unless current_user.admin?)
   end
 end

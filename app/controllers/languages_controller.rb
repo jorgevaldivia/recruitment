@@ -1,4 +1,7 @@
 class LanguagesController < ApplicationController
+
+  before_filter :verify_is_admin, :only => [ :index , :show, :new, :create, :edit, :update, :destroy]
+
   # GET /languages
   # GET /languages.json
   def index
@@ -79,5 +82,9 @@ class LanguagesController < ApplicationController
       format.html { redirect_to languages_url }
       format.json { head :no_content }
     end
+  end
+
+  def verify_is_admin
+    (current_user.nil?) ? redirect_to(new_user_session_path) : (redirect_to(recruits_path) unless current_user.admin?)
   end
 end
