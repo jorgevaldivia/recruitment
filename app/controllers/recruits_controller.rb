@@ -1,6 +1,7 @@
 class RecruitsController < ApplicationController
 
-  before_filter :verify_is_admin, :only => [ :index , :update, :destroy]
+  # before_filter :verify_is_admin, :only => [ :index , :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /recruits
   # GET /recruits.json
@@ -84,7 +85,9 @@ class RecruitsController < ApplicationController
     end
   end
 
-  def verify_is_admin
-    (current_user.nil?) ? redirect_to(new_user_session_path) : (redirect_to(recruits_path) unless current_user.admin?)
-  end
+  private
+
+  # def verify_is_admin
+  #   (current_user.nil?) ? redirect_to(new_user_session_path) : (redirect_to(recruits_path) unless current_user.admin?)
+  # end
 end

@@ -23,14 +23,14 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-  config.authentication_keys = [ :email ]
+  # config.authentication_keys = [ :email ]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
   # find_for_authentication method and considered in your model lookup. For instance,
   # if you set :request_keys to [:subdomain], :subdomain will be used on authentication.
   # The same considerations mentioned for authentication_keys also apply to request_keys.
-  config.request_keys = [ :email ]
+  # config.request_keys = []
 
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
@@ -82,7 +82,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = "3002879eac3796bc1ef9e6263d385786af49dd76e1ce3383ec9d0df01a6afebce39ff7a10cfe3a07964ad216e0ed8782558deec3dd656767a585fbbdb16e0eed"
+  # config.pepper = "4831568a7b60690dd24ea2978f558a43222e283d2fc3467a1a15a617cdfb9f9e543c525517a70442e559e1f2aa150009b21bfeb3e95423002f0b539319967f49"
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -114,12 +114,12 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length. Default is 6..128.
-  config.password_length = 6..128
+  # config.password_length = 6..128
 
   # Email regex used to validate email formats. It simply asserts that
   # an one (and only one) @ exists in the given string. This is mainly
   # to give user feedback and not to assert the e-mail validity.
-  config.email_regexp = /\A[^@]+@[^@]+\z/
+  # config.email_regexp = /\A[^@]+@[^@]+\z/
 
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
@@ -165,11 +165,11 @@ Devise.setup do |config|
   # :authlogic_sha512 (then you should set stretches above to 20 for default behavior)
   # and :restful_authentication_sha1 (then you should set stretches to 10, and copy
   # REST_AUTH_SITE_KEY to pepper)
-  config.encryptor = :sha512
+  # config.encryptor = :sha512
 
   # ==> Configuration for :token_authenticatable
   # Defines name of the authentication token params key
-  config.token_authentication_key = :auth_token
+  # config.token_authentication_key = :auth_token
 
   # ==> Scopes configuration
   # Turn scoped views on. Before rendering "sessions/new", it will first check for

@@ -11,8 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
-ActiveRecord::Schema.define(:version => 20120601202554) do
+ActiveRecord::Schema.define(:version => 20120604172115) do
 
   create_table "knowledges", :force => true do |t|
     t.datetime "created_at",  :null => false
